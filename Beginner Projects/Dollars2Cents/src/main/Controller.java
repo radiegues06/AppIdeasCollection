@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Controller {
@@ -44,7 +46,18 @@ public class Controller {
     @FXML
     private void calculateClick() {
         if (!money.getText().isEmpty()) {
-            Algorithm.calculateMoneyDistribution(money.getText());
+            HashMap<String,Integer> distribution =  Algorithm.calculateMoneyDistribution(money.getText());
+
+            for (Map.Entry<String,Integer> entry: distribution.entrySet()) {
+                String key = entry.getKey();
+                Integer amount = entry.getValue();
+
+                for (TextField field : moneyFieldsList) {
+                    if (field.getId().equals(key + "Field"))
+                        field.setText(String.valueOf(amount));
+                }
+
+            }
         }
     }
 

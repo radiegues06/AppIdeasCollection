@@ -9,7 +9,7 @@ public class Algorithm {
     private static LinkedHashMap<String, Double> moneyValues = new LinkedHashMap<>();
     private static HashMap<String, Integer> distribution = new HashMap<>();
 
-    public static HashMap<String , Integer> calculateMoneyDistribution(String moneyUserInput) {
+    public static HashMap<String,Integer> calculateMoneyDistribution(String moneyUserInput) {
         createMoneyValuesMap();
 
         double userAmountInput = convertMoneyInputToDouble(moneyUserInput);
@@ -44,8 +44,8 @@ public class Algorithm {
         moneyValues.put("Cents50", 0.50);
         moneyValues.put("Cents25", 0.25);
         moneyValues.put("Cents10", 0.10);
-        moneyValues.put("Cents05", 0.05);
-        moneyValues.put("Cents01", 0.01);
+        moneyValues.put("Cents5", 0.05);
+        moneyValues.put("Cents1", 0.01);
     }
 
 }
