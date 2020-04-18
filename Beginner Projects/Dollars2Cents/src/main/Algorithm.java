@@ -1,26 +1,39 @@
 package main;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Algorithm {
 
-    public Algorithm() {
-        createMoneyValuesMap();
-    }
-
-    private static HashMap<String, Double> moneyValues = new HashMap<>();
+    private static LinkedHashMap<String, Double> moneyValues = new LinkedHashMap<>();
     private static HashMap<String, Integer> distribution = new HashMap<>();
 
     public static HashMap<String , Integer> calculateMoneyDistribution(String moneyUserInput) {
-        double money = convertMoneyInput(moneyUserInput);
+        createMoneyValuesMap();
+
+        double userAmountInput = convertMoneyInputToDouble(moneyUserInput);
+
+        for (Map.Entry<String , Double> entry: moneyValues.entrySet()) {
+            String key = entry.getKey();
+            Double moneyValue = entry.getValue();
+
+            double amountOfMoneyValue = userAmountInput / moneyValue;
+
+            distribution.put(key, (int) amountOfMoneyValue);
+
+            userAmountInput -= (int) amountOfMoneyValue * moneyValue;
+        }
+
+        System.out.println(distribution.toString());
         return distribution;
     }
 
-    public static double convertMoneyInput(String moneyUserInput) {
+    public static double convertMoneyInputToDouble(String moneyUserInput) {
         return Double.parseDouble(InputValidator.getInputDigits(moneyUserInput)) / 100.0;
     }
 
-    private void createMoneyValuesMap() {
+    private static void createMoneyValuesMap() {
         moneyValues.put("Reais100", 100.0);
         moneyValues.put("Reais50", 50.0);
         moneyValues.put("Reais20", 20.0);

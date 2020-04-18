@@ -43,9 +43,6 @@ public class Controller {
 
     @FXML
     private void calculateClick() {
-
-        System.out.println(Cents1Field.getId());
-
         if (!money.getText().isEmpty()) {
             Algorithm.calculateMoneyDistribution(money.getText());
         }
