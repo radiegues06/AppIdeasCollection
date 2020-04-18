@@ -28,11 +28,8 @@ public class InputValidator {
         }
 
         String integerDigits = inputNumbers.substring(0, inputNumbers.length() - 2);
-        String integerPart = "";
 
-        for (int i = 0; i < integerDigits.length() - 1; i+=3) {
-
-        }
+        String integerPart = insertPointEveryThreeDigits(integerDigits);
 
         String decimalPart = inputNumbers.substring(inputNumbers.length() - 2);
 
@@ -45,5 +42,15 @@ public class InputValidator {
     public static String insertStringInIndex(String originalString, String addString, int index) {
         return originalString.substring(0, index) + addString +
                 originalString.substring(index);
+    }
+
+    public static String insertPointEveryThreeDigits(String number) {
+
+        int idx = number.length();
+        while (idx > 3) {
+            idx-=3;
+            number = insertStringInIndex(number, ".", idx);
+        }
+        return number;
     }
 }
