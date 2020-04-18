@@ -5,11 +5,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Controller {
 
     @FXML
     private TextField money;
+
+    private List<TextField> moneyFieldsList = new ArrayList<TextField>();
 
     @FXML
     private TextField Reais100Field;
@@ -38,7 +43,12 @@ public class Controller {
 
     @FXML
     private void calculateClick() {
-        System.out.println("oi");
+
+        System.out.println(Cents1Field.getId());
+
+        if (!money.getText().isEmpty()) {
+            Algorithm.calculateMoneyDistribution(money.getText());
+        }
     }
 
 
@@ -53,5 +63,21 @@ public class Controller {
             }
         });
 
+        createMoneyFieldsList();
+    }
+
+    private void createMoneyFieldsList() {
+        moneyFieldsList.add(Reais100Field);
+        moneyFieldsList.add(Reais50Field);
+        moneyFieldsList.add(Reais20Field);
+        moneyFieldsList.add(Reais10Field);
+        moneyFieldsList.add(Reais5Field);
+        moneyFieldsList.add(Reais2Field);
+        moneyFieldsList.add(Reais1Field);
+        moneyFieldsList.add(Cents50Field);
+        moneyFieldsList.add(Cents25Field);
+        moneyFieldsList.add(Cents10Field);
+        moneyFieldsList.add(Cents5Field);
+        moneyFieldsList.add(Cents1Field);
     }
 }

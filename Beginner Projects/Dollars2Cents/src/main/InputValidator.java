@@ -5,7 +5,7 @@ public class InputValidator {
     private static final int MINIMUM_VALUE_SCREEN_LENGTH = 3;
     public static final String moneyMarker = "R$";
 
-    private static String getInputDigits(String userViewMoneyDigits) {
+    public static String getInputDigits(String userViewMoneyDigits) {
         return userViewMoneyDigits.replaceAll("[^\\d]", "");
     }
 
