@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AppIdeasCollection.iml" filepath="$PROJECT_DIR$/.idea/AppIdeasCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bin2Dec/Bin2Dec.iml" filepath="$PROJECT_DIR$/Bin2Dec/Bin2Dec.iml" />
+    </modules>
+  </component>
+</project>

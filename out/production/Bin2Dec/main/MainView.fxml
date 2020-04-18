@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="231.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.MainView">
+   <children>
+      <Button id="convertButton" fx:id="convertButton" layoutX="177.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Convert!" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="244.0" />
+      <Label layoutX="154.0" layoutY="165.0" text="Binary" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="165.0" />
+      <Label layoutX="95.0" layoutY="201.0" text="Decimal" AnchorPane.leftAnchor="95.0" />
+      <TextField fx:id="binaryDigit" layoutX="166.0" layoutY="161.0" text="Enter the binary number" />
+      <TextField fx:id="decimalDigit" layoutX="166.0" layoutY="197.0" />
+      <Label layoutX="190.0" layoutY="47.0" text="Bin2Dec" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5055555555555555" centerY="0.5" radius="0.7558139534883721">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="88.0" layoutY="96.0" text="Convert all your binary thoughts to decimal numbers!" textAlignment="CENTER" textFill="#ff8989" />
+   </children>
+</AnchorPane>
