@@ -18,6 +18,8 @@ public class Algorithm {
             String key = entry.getKey();
             Double moneyValue = entry.getValue();
 
+            //TODO consider float division. It is doing it worng. E.g. 17,70
+
             double amountOfMoneyValue = userAmountInput / moneyValue;
 
             distribution.put(key, (int) amountOfMoneyValue);
